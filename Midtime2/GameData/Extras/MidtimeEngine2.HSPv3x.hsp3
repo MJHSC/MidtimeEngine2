@@ -1,0 +1,11 @@
+//Midtime Engine
+//	本ソースコードのライセンスについては付属の LICENSE.html をお読みください。
+//	Please read LICENSE.html for detail license information.
+
+#regcmd "Midtime2FunctionV3x", "MidtimeEngine\\Binaries\\MJHSC.MidtimeEngine.Languages.HSP.HSPPlugin.dll"
+#cmd Midtime2Function $0000
+#cmd m2f $0000
+
+#module MidtimeEngine2
+#include "MidtimeEngine2.HSPv3x.GameAPI.hsp3"
+#global

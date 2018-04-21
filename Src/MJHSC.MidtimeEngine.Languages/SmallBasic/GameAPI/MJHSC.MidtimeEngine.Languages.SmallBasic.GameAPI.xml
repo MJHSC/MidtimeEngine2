@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI</name>
+    </assembly>
+    <members>
+        <member name="T:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MCore">
+            <summary>
+            Midtime自体や、システムに関する操作を行います。
+            </summary>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MCore.Exit">
+            <summary>
+            Midtime を終了します。
+            終了ができないプラットフォームでは何も起きません。
+            </summary>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MCore.Goto(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            別のスクリプトをロードし、実行します。（今のスクリプトはここで終了します。）
+            </summary>
+            <param name="ScriptName">ロードしたいスクリプトの名前 (例: Startup)</param>>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MCore.Sleep(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            指定した時間の間、動作を停止します。長さはミリ秒(ms)単位です。（1000ミリ秒で1秒です）
+            </summary>
+            <param name="TimeInMS">停止する時間（ミリ秒）</param>
+            <returns></returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MCore.Loop">
+            <summary>
+            「while MCore.Loop()」 と使うことで、ゲームループを行います。
+            プレイする機械によって速度が異なりますが、最速で動作します。
+            
+            通常は、代わりに「MCore.FPSLoop()」を使います。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MCore.LoopFPS(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            「while MCore.FPSLoop()」と使うことで、ゲームループを行います。
+            速度（FPS）制御を行います
+            </summary>
+            <param name="TargetFPS">ゲームの動作FPS。（1～30）
+            通常は30を指定してください。
+            
+            ※現在、30を超えるFPSの指定はサポートされていません。</param>
+            <returns></returns>
+        </member>
+        <member name="T:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MDebug">
+            <summary>
+            Midtime自体や、システムに関する操作を行います。
+            </summary>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MDebug.Write(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            デバッグログに文字を書き込みます。
+            </summary>
+            <param name="Text">デバッグログに書き込みたい文字</param>
+        </member>
+        <member name="T:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage">
+            <summary>
+            Midtime Engine の画面に関する設定を行います。
+            </summary>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.SetTextColor(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            今後、新たに作成する文字の色を変更します。
+            各色の量は「0～255」の数字で光の三原色として表します。
+            すべて０の場合は黒、すべて255の場合は白になります。
+            
+            既に作成済みの文字に影響はありません。
+            </summary>
+            <param name="R">赤色（0～255）</param>
+            <param name="G">緑色（0～255）</param>
+            <param name="B">青色（0～255）</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.SetTextSize(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            今後、新たに作成する文字の大きさを変更します。
+            大きさの単位はWordなどと同じ、「ポイント（pt）」です。
+            
+            既に作成済みの文字に影響はありません。
+            </summary>
+            <param name="Size">文字の大きさ（pt）</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.SetTextFont(Microsoft.SmallBasic.Library.Primitive)">
+            今後、新たに作成する文字の書体を変更します。
+            システムによって使用可能な書体が異なるので、通常使用するべきではありません。
+            
+            既に作成済みの文字に影響はありません。
+            <param name="FontName">フォント名</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.CreateText(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            指定した文字を画面表示できるようにします。
+            </summary>
+            <param name="DrawText">表示したい文字</param>
+            <returns>画像ID</returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.CreateImage(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            指定した画像ファイルを画面表示できるようにします。
+            画像は「GameData\Images\」）に保存されている必要があります。
+            </summary>
+            <param name="FileName">表示したい画像ファイル名</param>
+            <returns>画像ID</returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.Reset">
+            <summary>
+            すべてのイメージを削除してリセットします。
+            スクリプトが変わる際は自動的に実行されます。
+            </summary>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.Move(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            画像を「現在の位置から」指定された量だけ移動します。
+            </summary>
+            <param name="MImageID">画像ID (MImage.CreateText または MImage.CreateImage で取得できます。)</param>
+            <param name="X">横方向の移動量。</param>
+            <param name="Y">縦方向の移動量。</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.SetPosition(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            画像を指定された位置に移動します。
+            </summary>
+            <param name="MImageID">画像ID (MImage.CreateText または MImage.CreateImage で取得できます。)</param>
+            <param name="X">横方向の位置。</param>
+            <param name="Y">縦方向の位置。</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.Alpha(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            画像の透明度を「現在の位置から」指定された量だけ変化させます。
+            
+            その結果、最小値（0）以下の場合は透明になり、それ以下には下がりません。
+            また、最大値（255）以上の場合は不透明になり、それ以上には上がりません。
+            </summary>
+            <param name="MImageID">画像ID (MImage.CreateText または MImage.CreateImage で取得できます。)</param>
+            <param name="Alpha">透明度。</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.SetAlpha(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            画像の透明度を指定します。
+            
+            最小値（0）以下の場合は透明になり、それ以下には下がりません。
+            最大値（255）以上の場合は不透明になり、それ以上には上がりません。
+            </summary>
+            <param name="MImageID">画像ID (MImage.CreateText または MImage.CreateImage で取得できます。)</param>
+            <param name="Alpha">透明度。</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.Rotate(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            画像の角度を「現在の角度から」指定された度数だけ回転させます。
+            
+            単位は度（°）です。
+            </summary>
+            <param name="MImageID">画像ID (MImage.CreateText または MImage.CreateImage で取得できます。)</param>
+            <param name="Rotate">回転させる度数（-360～360）</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.SetRotate(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            画像の角度を指定された角度にします。
+            
+            単位は度（°）です。 90で真横、180で真逆になります。
+            <param name="MImageID">画像ID (MImage.CreateText または MImage.CreateImage で取得できます。)</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.Draw(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在までに設定された値を使用して、画像を画面に表示します。
+            </summary>
+            <param name="MImageID">画像ID (MImage.CreateText または MImage.CreateImage で取得できます。)</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MImage.Close(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、画像を閉じて、読み込みを行う前の状態に戻します。
+            これを行った 画像コントローラ はもう使用できません。
+            </summary>
+            <param name="MImageID">画像ID (MImage.CreateText または MImage.CreateImage で取得できます。)</param>
+        </member>
+        <member name="T:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MInput">
+            <summary>
+            Midtime Engine の画面に関する設定を行います。
+            </summary>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MInput.GetButton(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            指定した時間の間、動作を停止します。長さはミリ秒(ms)単位です。（1000ミリ秒で1秒です）
+            </summary>
+            <param name="TimeInMS">停止する時間（ミリ秒）</param>
+            <returns></returns>
+        </member>
+        <member name="T:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia">
+            <summary>
+            BGM や SE 、ビデオ の再生、停止、音量や速度等の設定を行います。
+            </summary>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.CreateSound(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            指定されたファイルからサウンド（BGM・SE）を読み込み、サウンドIDを取得します。
+            サウンドは「GameData\Sounds」フォルダに保存されている必要があります。
+            </summary>
+            <param name="FileName">ファイル名 （.\GameData\Sounds\）</param>
+            <returns>サウンドID</returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.CreateVideo(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            指定されたファイルからサウンド（BGM・SE）を読み込み、ビデオIDを取得します。
+            サウンドは「GameData\Sounds」フォルダに保存されている必要があります。
+            </summary>
+            <param name="FileName">ファイル名 （.\GameData\Videos\）</param>
+            <returns>ビデオID</returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.Reset">
+            <summary>
+            すべてのサウンドコントローラを削除してリセットします。
+            スクリプトが変わる際は自動的に実行されます。
+            </summary>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.PlayOnce(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            読み込まれたサウンド・ビデオを一度だけ再生します。
+            SEやビデオの再生に最適です。
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.PlayLoop(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            読み込まれたサウンド・ビデオを繰り返し再生します。
+            BGMの再生に最適です。
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.Stop(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、サウンド・ビデオを停止します。
+            再度、再生した場合は最初から再生されます。
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.Pause(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、サウンド・ビデオを停止します。
+            再度、再生した場合は Pause した位置から再生されます。
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.Close(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、サウンド・ビデオを閉じて、読み込みを行う前の状態に戻します。
+            これを行った サウンドコントローラ はもう使用できません。
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.GetLength(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、サウンド・ビデオの「長さ」を取得します。 
+            長さはミリ秒(1ms)単位です。（1000ミリ秒で1秒です）
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+            <returns>長さ (ミリ秒)</returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.GetPosition(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、サウンド・ビデオの「現在の再生位置」を取得します。 
+            長さはミリ秒(1ms)単位です。（1000ミリ秒で1秒です）
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+            <returns>現在の再生位置 (ミリ秒)</returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.SetPosition(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、指定したサウンド・ビデオの「再生位置」を変更します。 
+            長さはミリ秒(1ms)単位です。（1000ミリ秒で1秒です）
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+            <param name="p">新しい再生位置 (ミリ秒)</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.GetVolume(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、サウンド・ビデオの「音量」を取得します。 
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+            <returns>現在の音量 (0～100)</returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.SetVolume(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、サウンド・ビデオの「音量」を変更します。 
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+            <param name="v">新しい音量 (0～100)</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.GetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、サウンド・ビデオの「速度」を取得します。
+            速度は1000で等速（x1.0）です。1200で1.2倍、800で0.8倍になります。
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+            <returns>再生速度 (x1.0 = 1000)</returns>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MMedia.SetSpeed(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            現在読み込まれている、サウンド・ビデオの「速度」を変更します。
+            速度は1000で等速（x1.0）です。1200で1.2倍、800で0.8倍になります。
+            </summary>
+            <param name="MMediaID">サウンドID または ビデオID (MMedia.CreateSound または MMedia.CreateVideo で取得できます。)</param>
+            <param name="s">再生速度 (x1.0 = 1000)</param>
+        </member>
+        <member name="T:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MWindow">
+            <summary>
+            Midtime Engine の画面に関する設定を行います。
+            </summary>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MWindow.SetTitle(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            【Windows専用】ゲーム画面のタイトル表記を変更します。通常使用する必要はありません。
+            </summary>
+            <param name="Title">新しいタイトル</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MWindow.SetSize(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            【Windows専用】ゲーム画面の大きさを変更します。 解像度は変わらないため、960x540 以外にした場合は縮小または拡大されます。
+            品質の維持のため、「480x270・960x540（1K）・1440x810・1920x1080（2K）・2880x1620・3840x2160（4K）・5760x3240・7680x4320（8K）」以外の数値は推奨しません。
+            </summary>
+            <param name="Width">新しい横幅</param>
+            <param name="Height">新しい縦幅</param>
+        </member>
+        <member name="M:MJHSC.MidtimeEngine.Languages.SmallBasic.GameAPI.MWindow.ToggleFullscreen">
+            <summary>
+            【Windows専用】画面をフルスクリーン表示にします。既にフルスクリーンの場合、元に戻します。
+            「Alt+Enter」を押すと、いつでもプレイヤーは切り替えられることに注意してください。
+            　Windows以外では常にフルスクリーンです。
+            </summary>
+        </member>
+    </members>
+</doc>

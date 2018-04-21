@@ -1,0 +1,8 @@
+//Midtime Engine
+//	本ソースコードのライセンスについては付属の LICENSE.html をお読みください。
+//	Please read LICENSE.html for detail license information.
+
+#uselib "*m2f*"
+#func Midtime2Function Midtime2FunctionV26 $202
+#func m2f Midtime2FunctionV26 $202
+

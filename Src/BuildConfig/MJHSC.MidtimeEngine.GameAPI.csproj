@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{60CDF6A7-6EA8-4222-B058-9F483D406DC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>
+    </AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Midtime2\MidtimeEngine\Binaries\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>..\..\Midtime2\MidtimeEngine\Binaries\MJHSC.MidtimeEngine.GameAPI.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>..\MJHSC.MidtimeEngine.Resources\Win32\MJHSC.res</Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MJHSC.MidtimeEngine.Resources\References\Microsoft.Xna.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MJHSC.MidtimeEngine.Resources\References\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="MJHSC.MidtimeEngine.csproj">
+      <Project>{AF557532-0718-468E-B333-637E38BB6DC6}</Project>
+      <Name>MJHSC.MidtimeEngine</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="MJHSC.MidtimeEngine.Plugins.csproj">
+      <Project>{0C25A998-4C31-43E2-B481-7AE5F98E294E}</Project>
+      <Name>MJHSC.MidtimeEngine.Plugins</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MCore.cs">
+      <Link>MCore.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MDebug.cs">
+      <Link>MDebug.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MImage.cs">
+      <Link>MImage.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MInput.Common.cs">
+      <Link>MInput.Common.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MInput.Common.InputIDs.cs">
+      <Link>MInput.Common.InputIDs.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MInput.Common.KeyboardID.cs">
+      <Link>MInput.Common.KeyboardID.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MInput.Hardware.cs">
+      <Link>MInput.Hardware.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MInput.KB2Virtual.cs">
+      <Link>MInput.KB2Virtual.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MInput.Virtual.cs">
+      <Link>MInput.Virtual.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MInput.X360.cs">
+      <Link>MInput.X360.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MMedia.cs">
+      <Link>MMedia.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine.GameAPI\MWindow.cs">
+      <Link>MWindow.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
