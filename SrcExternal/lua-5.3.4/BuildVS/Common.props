@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<TrackFileAccess>false</TrackFileAccess>
+		<IntDir>$(SolutionDir)\TEMP\$(MSBuildProjectName)\</IntDir>
+		<GenerateManifest>false</GenerateManifest>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<MultiProcessorCompilation>true</MultiProcessorCompilation>
+			<Optimization>Full</Optimization>
+			<InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+			<OmitFramePointers>true</OmitFramePointers>
+			<BufferSecurityCheck>false</BufferSecurityCheck>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+		</ClCompile>
+	</ItemDefinitionGroup>
+
+</Project>

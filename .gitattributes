@@ -1,0 +1,9 @@
+*		text=auto
+
+# diffしない、改行コードも変換しない
+*.sln		binary
+*.suo		binary
+*.vcxproj	binary
+*.csproj	binary
+
+

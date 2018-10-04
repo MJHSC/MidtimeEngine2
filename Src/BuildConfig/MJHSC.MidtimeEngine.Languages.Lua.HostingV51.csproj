@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F83C562-EBC9-44A5-8075-74F3AACC9D96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Midtime2\MidtimeEngine\Binaries\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>..\MJHSC.MidtimeEngine.Resources\Win32\MJHSC.res</Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="MJHSC.MidtimeEngine.csproj">
+      <Project>{AF557532-0718-468E-B333-637E38BB6DC6}</Project>
+      <Name>MJHSC.MidtimeEngine</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="MJHSC.MidtimeEngine.GameAPI.csproj">
+      <Project>{60CDF6A7-6EA8-4222-B058-9F483D406DC7}</Project>
+      <Name>MJHSC.MidtimeEngine.GameAPI</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="MJHSC.MidtimeEngine.Languages.Lua.csproj">
+      <Project>{7C056CE7-FE86-4994-AA75-283F368F4154}</Project>
+      <Name>MJHSC.MidtimeEngine.Languages.Lua</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="MJHSC.MidtimeEngine.Plugins.csproj">
+      <Project>{0C25A998-4C31-43E2-B481-7AE5F98E294E}</Project>
+      <Name>MJHSC.MidtimeEngine.Plugins</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MJHSC.MidtimeEngine.Languages\Lua\HostingV51\Lua.cs">
+      <Link>Lua.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

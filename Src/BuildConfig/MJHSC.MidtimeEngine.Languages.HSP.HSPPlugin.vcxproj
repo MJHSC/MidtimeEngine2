@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(SolutionDir)\Common.props" Condition="exists('$(SolutionDir)\Common.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\MJHSC.MidtimeEngine.Languages\HSP\HSPPlugin3\HSPPlugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\MJHSC.MidtimeEngine.Languages\HSP\HSPPlugin3\HSPPlugin.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\MJHSC.MidtimeEngine.Languages\HSP\HSPPlugin3\Include\hsp3debug.h" />
+    <ClInclude Include="..\MJHSC.MidtimeEngine.Languages\HSP\HSPPlugin3\Include\hsp3plugin.h" />
+    <ClInclude Include="..\MJHSC.MidtimeEngine.Languages\HSP\HSPPlugin3\Include\hsp3struct.h" />
+    <ClInclude Include="..\MJHSC.MidtimeEngine.Languages\HSP\HSPPlugin3\Include\hspvar_core.h" />
+    <ClInclude Include="..\MJHSC.MidtimeEngine.Languages\HSP\HSPPlugin3\Include\hspwnd.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>MJHSC.MidtimeEngine.Languages.HSP.HSPPlugin</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <EmbedManifest>false</EmbedManifest>
+    <OutDir>$(SolutionDir)\BuildConfig\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <ForceFileOutput>Enabled</ForceFileOutput>
+      <LargeAddressAware>true</LargeAddressAware>
+      <TerminalServerAware>true</TerminalServerAware>
+      <SetChecksum>false</SetChecksum>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <ModuleDefinitionFile>$(SolutionDir)\MJHSC.MidtimeEngine.Languages\HSP\HSPPlugin3\HSPPlugin.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>move /y "$(TargetPath)" "$(SolutionDir)\..\Midtime2\MidtimeEngine\Binaries\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

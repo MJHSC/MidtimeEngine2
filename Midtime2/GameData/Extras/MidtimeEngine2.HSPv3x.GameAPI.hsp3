@@ -1,0 +1,7 @@
+//Midtime Engine
+//	本ソースコードのライセンスについては付属の LICENSE.html をお読みください。
+//	Please read LICENSE.html for detail license information.
+
+#deffunc MMedia_CreateSound str a1
+	Midtime2Function "MMedia.CreateSound", a1
+	return

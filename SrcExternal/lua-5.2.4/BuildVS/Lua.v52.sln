@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua_Static", "Lua_Static.vcxproj", "{BAE273F1-C962-11C1-28AA-898C07576448}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua.v52.VM", "Lua.vcxproj", "{B0C0780A-8908-34A3-4A6C-D1CA30DF7CA8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BAE273F1-C962-11C1-28AA-898C07576448} = {BAE273F1-C962-11C1-28AA-898C07576448}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaC", "LuaC.vcxproj", "{58454896-9FB8-A97A-A94C-1984D6BE2EF0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B0C0780A-8908-34A3-4A6C-D1CA30DF7CA8} = {B0C0780A-8908-34A3-4A6C-D1CA30DF7CA8}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua", "LuaI.vcxproj", "{04F90D07-8614-ADCD-EA16-6C6F00E4FC54}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B0C0780A-8908-34A3-4A6C-D1CA30DF7CA8} = {B0C0780A-8908-34A3-4A6C-D1CA30DF7CA8}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAE273F1-C962-11C1-28AA-898C07576448}.Release|Win32.ActiveCfg = Release|Win32
+		{BAE273F1-C962-11C1-28AA-898C07576448}.Release|Win32.Build.0 = Release|Win32
+		{B0C0780A-8908-34A3-4A6C-D1CA30DF7CA8}.Release|Win32.ActiveCfg = Release|Win32
+		{B0C0780A-8908-34A3-4A6C-D1CA30DF7CA8}.Release|Win32.Build.0 = Release|Win32
+		{58454896-9FB8-A97A-A94C-1984D6BE2EF0}.Release|Win32.ActiveCfg = Release|Win32
+		{58454896-9FB8-A97A-A94C-1984D6BE2EF0}.Release|Win32.Build.0 = Release|Win32
+		{04F90D07-8614-ADCD-EA16-6C6F00E4FC54}.Release|Win32.ActiveCfg = Release|Win32
+		{04F90D07-8614-ADCD-EA16-6C6F00E4FC54}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

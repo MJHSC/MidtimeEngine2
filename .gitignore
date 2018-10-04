@@ -1,0 +1,41 @@
+# ビルド結果は含まない
+/Midtime2/MidtimeEngine/Binaries/*
+/Midtime2/*.exe
+/Midtime2/*.dll
+/Midtime2/*.ini
+Release
+TEMP
+
+#リリース
+*.zip
+*.msi
+*.tar.gz
+*.tgz
+*.tar.xz
+*.txz
+
+# 不要な生成物
+*.obj
+*.exp
+*.pdb
+*.cache
+
+# 環境依存データ
+*.suo.mjhsc
+*.vcxproj.user
+*.vcxproj.filters
+
+# ログ
+*.sdf
+*.opensdf
+*.ipch
+*.log
+*.tlog
+
+# 不要なファイル
+Thumbs.db
+.DS_Store
+/OpenBuildCMD.cmd
+
+# ライセンスにより、バイナリで提供されるファイル。（現在はオープンソース実装へ移行したため未使用）
+/SrcPrivate

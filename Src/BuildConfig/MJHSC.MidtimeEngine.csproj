@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF557532-0718-468E-B333-637E38BB6DC6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>
+    </AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Midtime2\MidtimeEngine\Binaries\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>..\MJHSC.MidtimeEngine.Resources\Win32\MJHSC.res</Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MJHSC.MidtimeEngine.Resources\References\Microsoft.Xna.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MJHSC.MidtimeEngine.Resources\References\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MJHSC.MidtimeEngine\DebugServer.cs">
+      <Link>DebugServer.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\DLLLoader.cs">
+      <Link>DLLLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\GameLoop.cs">
+      <Link>GameLoop.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\GameWindow.cs">
+      <Link>GameWindow.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\Graphics.cs">
+      <Link>Graphics.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\ImageHelper.cs">
+      <Link>ImageHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\LicenseServer.cs">
+      <Link>LicenseServer.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\MediaServer.cs">
+      <Link>MediaServer.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\Midtime.Func.cs">
+      <Link>Midtime.Func.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\Midtime.Vars.cs">
+      <Link>Midtime.Vars.cs</Link>
+    </Compile>
+    <Compile Include="..\MJHSC.MidtimeEngine\Startup.cs">
+      <Link>Startup.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="MJHSC.MidtimeEngine.Plugins.csproj">
+      <Project>{0C25A998-4C31-43E2-B481-7AE5F98E294E}</Project>
+      <Name>MJHSC.MidtimeEngine.Plugins</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
